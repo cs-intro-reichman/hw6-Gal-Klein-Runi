@@ -56,7 +56,7 @@ public class Runigram {
 			Color[][] blendedImage = blend(tinypic, flippedH, 0.5);
 			print(blendedImage);
 			display(blendedImage);
-			StdDraw.pause(1000);
+			StdDraw.pause(100);
 		
 			// Test morphing (from tinypic to flipped image)
 			System.out.println("Morphing from Original to Horizontally Flipped Image:");
@@ -248,11 +248,12 @@ public class Runigram {
 		if (source.length!=target.length || source[0].length!=target[0].length) {
 			target = scaled(target,  source[0].length, source.length );
 		}
+		
 		for (int i=0; i<=n; i++) {
-			double a = (n-i)/n;
+			double a = (double)(n-i)/n;
 			Color[][] newImage = blend(source,target,a);
 			display(newImage);
-			StdDraw.pause(200);
+			StdDraw.pause(2000);
 		}
 	}
 
